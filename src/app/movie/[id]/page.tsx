@@ -5,16 +5,14 @@ import MetaGenerator from "@/components/atoms/MetaGenerator";
 import Header from "@/components/molecules/Header";
 import UseDetailMovie from "@/hook/detailMovie";
 import dynamic from "next/dynamic";
-import { useSearchParams } from "next/navigation";
 import React from "react"
 
-function page() {
-  const params = useSearchParams();
-  const movie_id = params.get("movie_id") ?? "";
+function page({params} : {params: { id: string } }) {
+  const movie_id = params.id
   const { state } = UseDetailMovie(movie_id);
   const { movie } = state;
 
-  const DetailMovies = dynamic(() =>  import('../../components/molecules/DetailMovie'), { 
+  const DetailMovies = dynamic(() =>  import('../../../components/molecules/DetailMovie'), { 
     loading: () => <Loading/>,
     ssr: false 
   })

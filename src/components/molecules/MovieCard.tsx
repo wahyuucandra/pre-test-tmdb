@@ -19,7 +19,7 @@ const MovieCard = ({
           key={movie.id}
           className="relative bg-white rounded-lg border border-gray-400 shadow-md w-[220px]"
         >
-          <Link href={`/movie?movie_id=${movie.id}`}>
+          <Link href={`/movie/${movie.id}`}>
             <Image
               src={`https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
               width={220}

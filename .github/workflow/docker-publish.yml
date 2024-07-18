@@ -20,7 +20,7 @@ jobs:
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKER_USERNAME }} #dapet dari apikey docker trus disetup digithub 
-        password: ${{ secrets.DOCKER_PASSWORD }} #dapet dari apikey docker trus disetup digithub;
+        password: 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 #dapet dari apikey docker trus disetup digithub;
     
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v2
